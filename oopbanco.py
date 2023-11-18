@@ -20,7 +20,7 @@ while continuar:
         def saque(self):
             global saque
             saque = int(input('Digite um valor para sacar: '))
-            if self.valor > saque:
+            if self.valor >= saque:
                 self.valor -= saque
                 print(f'Transferencia realizada com sucesso!!')
             else:
@@ -37,10 +37,6 @@ while continuar:
         banco.saque()
     else:
         banco.error()
-        if opcao == '1':
-            banco.deposito()
-        elif opcao == '2':
-            banco.saque()
 
     continuar = str(input('Deseja continuar? [S/N]: ')).upper().strip()[0]
     if continuar == 'N':
